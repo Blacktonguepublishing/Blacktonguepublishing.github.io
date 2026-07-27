@@ -1,2 +1,3 @@
 # Blacktonguepublishingllc.github.io
-Black Tongue Publishing is the home of MoltBot, AI-powered marketing, publishing, books, music, and creative technology by Terry McCall-El. This repository supports automation, content creation, digital publishing, and innovative business solutions designed to help creators grow and scale.
+© 2026 Black Tongue Publishing, LLC. All Rights Reserved.
+All books, music, artwork, trademarks, logos, text, and software contained in this repository are the intellectual property of Black Tongue Publishing, LLC or their respective owners unless otherwise noted. No part of this repository may be copied, reproduced, distributed, or used for commercial purposes without prior written permission.
