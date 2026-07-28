@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
 
-  <title>Black Tongue Publishing | Books, Music & Media</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Black Tongue Publishing | Books, Music and Media</title>
 
   <meta
     name="description"
-    content="Official website of Black Tongue Publishing, author Terry McCall-El, Lou Da 16 music, and Stinky the Brave."
-  />
+    content="The official home of Black Tongue Publishing, author Terry McCall-El, Lou Da 16 music and Stinky the Brave."
+  >
 
   <style>
     :root {
-      --black: #070707;
-      --dark: #111111;
-      --card: #171717;
-      --gold: #d4af37;
-      --gold-light: #f2d675;
+      --black: #050505;
+      --dark: #0d0d0d;
+      --card: #151515;
+      --card-light: #1c1c1c;
+      --gold: #d6ad3c;
+      --gold-light: #f3d778;
       --white: #ffffff;
-      --gray: #c7c7c7;
-      --border: rgba(212, 175, 55, 0.28);
+      --gray: #c6c6c6;
+      --muted: #969696;
+      --border: rgba(214, 173, 60, 0.32);
     }
 
     * {
@@ -31,19 +37,26 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: 110px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at top, #252015 0%, #0d0d0d 38%, #050505 100%);
       color: var(--white);
+      background:
+        radial-gradient(
+          circle at top,
+          #2b2413 0%,
+          #111111 30%,
+          #050505 70%
+        );
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     a {
@@ -51,22 +64,33 @@
       text-decoration: none;
     }
 
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
     .container {
       width: min(1180px, 92%);
       margin: 0 auto;
     }
 
+    .gold {
+      color: var(--gold);
+    }
+
+    /* HEADER */
+
     header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(5, 5, 5, 0.94);
+      background: rgba(5, 5, 5, 0.96);
       border-bottom: 1px solid var(--border);
       backdrop-filter: blur(12px);
     }
 
     .navbar {
-      min-height: 78px;
+      min-height: 82px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -76,75 +100,118 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 1rem;
-      font-weight: 800;
+      gap: 13px;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
 
     .brand img {
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       object-fit: contain;
       border-radius: 50%;
+      background: white;
+      padding: 3px;
+    }
+
+    .brand-text {
+      font-size: 1rem;
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
+      align-items: center;
       justify-content: flex-end;
-      gap: 18px;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     nav a {
-      font-size: 0.92rem;
       color: var(--gray);
-      font-weight: 700;
-      transition: 0.2s;
+      font-weight: 800;
+      font-size: 0.92rem;
+      transition: 0.25s ease;
     }
 
     nav a:hover {
       color: var(--gold);
     }
 
-    .hero {
-      min-height: 82vh;
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+    /* HERO */
+
+    .hero-section {
+      position: relative;
+      min-height: calc(100vh - 82px);
+      display: flex;
       align-items: center;
-      gap: 55px;
-      padding: 80px 0;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      top: 40px;
+      right: -160px;
+      border-radius: 50%;
+      background: rgba(214, 173, 60, 0.1);
+      filter: blur(70px);
+    }
+
+    .hero-section::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      left: -180px;
+      bottom: -170px;
+      border-radius: 50%;
+      background: rgba(214, 173, 60, 0.08);
+      filter: blur(70px);
+    }
+
+    .hero {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 65px;
+      padding: 85px 0;
     }
 
     .eyebrow {
       color: var(--gold);
-      font-weight: 800;
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 3px;
       margin-bottom: 15px;
+      font-size: 0.9rem;
     }
 
     h1 {
-      font-size: clamp(2.8rem, 7vw, 6rem);
+      max-width: 760px;
+      font-size: clamp(3rem, 7vw, 6.3rem);
       line-height: 0.98;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
     }
 
-    h1 span {
-      color: var(--gold);
-    }
-
-    .hero-text {
+    .hero-description {
+      max-width: 700px;
       color: var(--gray);
-      font-size: 1.1rem;
-      max-width: 720px;
+      font-size: 1.12rem;
       margin-bottom: 30px;
     }
 
     .button-row {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
       gap: 14px;
     }
@@ -153,17 +220,18 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 20px;
-      border-radius: 8px;
-      font-weight: 800;
+      min-height: 50px;
+      padding: 12px 21px;
+      border-radius: 9px;
       border: 1px solid var(--gold);
-      transition: 0.25s ease;
+      font-weight: 900;
       text-align: center;
+      transition: 0.25s ease;
     }
 
     .btn-primary {
-      background: var(--gold);
       color: #080808;
+      background: var(--gold);
     }
 
     .btn-primary:hover {
@@ -177,49 +245,107 @@
     }
 
     .btn-outline:hover {
-      background: var(--gold);
       color: #080808;
+      background: var(--gold);
       transform: translateY(-2px);
     }
 
-    .hero-image {
+    .hero-logo-wrap {
+      position: relative;
       display: flex;
+      align-items: center;
       justify-content: center;
     }
 
-    .hero-image img {
-      width: min(420px, 100%);
-      border-radius: 24px;
-      border: 2px solid var(--gold);
-      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
+    .hero-logo-glow {
+      position: absolute;
+      width: 94%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(214, 173, 60, 0.18);
+      filter: blur(42px);
     }
 
+    .hero-logo {
+      position: relative;
+      z-index: 2;
+      width: min(470px, 100%);
+      aspect-ratio: 1;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #ffffff;
+      padding: 18px;
+      border: 3px solid var(--gold);
+      box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.7),
+        0 0 40px rgba(214, 173, 60, 0.2);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 38px;
+      max-width: 670px;
+    }
+
+    .stat {
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.035);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--gold);
+      font-size: 1.5rem;
+      line-height: 1.2;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    /* GENERAL SECTIONS */
+
     section {
-      padding: 85px 0;
+      padding: 90px 0;
     }
 
     .section-heading {
+      max-width: 780px;
+      margin: 0 auto 48px;
       text-align: center;
-      margin-bottom: 45px;
     }
 
-    .section-heading p {
+    .section-heading .section-label {
       color: var(--gold);
-      font-weight: 800;
+      font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 2.5px;
       margin-bottom: 8px;
     }
 
     .section-heading h2 {
-      font-size: clamp(2rem, 5vw, 3.6rem);
+      font-size: clamp(2.2rem, 5vw, 4rem);
       text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+
+    .section-heading p {
+      color: var(--gray);
     }
 
     .grid {
       display: grid;
-      gap: 28px;
+      gap: 27px;
     }
+
+    /* BOOKS */
 
     .books-grid {
       grid-template-columns: repeat(4, 1fr);
@@ -227,22 +353,28 @@
 
     .book-card,
     .music-card,
-    .video-card,
+    .channel-card,
     .social-card {
-      background: linear-gradient(145deg, #1b1b1b, #0f0f0f);
+      background:
+        linear-gradient(
+          145deg,
+          var(--card-light),
+          var(--card)
+        );
       border: 1px solid var(--border);
       border-radius: 18px;
       overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.28);
       transition: 0.3s ease;
     }
 
     .book-card:hover,
     .music-card:hover,
-    .video-card:hover,
+    .channel-card:hover,
     .social-card:hover {
       transform: translateY(-7px);
       border-color: var(--gold);
-      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.55);
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55);
     }
 
     .book-cover {
@@ -257,19 +389,23 @@
     }
 
     .card-content h3 {
-      font-size: 1.25rem;
+      font-size: 1.24rem;
+      line-height: 1.25;
       margin-bottom: 10px;
     }
 
     .card-content p {
+      min-height: 92px;
       color: var(--gray);
-      font-size: 0.95rem;
+      font-size: 0.94rem;
       margin-bottom: 18px;
     }
 
     .card-content .btn {
       width: 100%;
     }
+
+    /* AUTHOR */
 
     .author-section {
       background: rgba(255, 255, 255, 0.025);
@@ -279,60 +415,91 @@
 
     .author-wrap {
       display: grid;
-      grid-template-columns: 360px 1fr;
-      gap: 55px;
+      grid-template-columns: 380px 1fr;
       align-items: center;
+      gap: 58px;
     }
 
-    .author-wrap img {
+    .author-photo-wrap {
+      position: relative;
+    }
+
+    .author-photo-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 18px -18px -18px 18px;
+      border: 2px solid var(--gold);
+      border-radius: 20px;
+      opacity: 0.45;
+    }
+
+    .author-photo {
+      position: relative;
+      z-index: 2;
       width: 100%;
       border-radius: 20px;
       border: 2px solid var(--gold);
     }
 
     .author-copy h2 {
-      font-size: clamp(2rem, 5vw, 4rem);
-      margin-bottom: 16px;
-    }
-
-    .author-copy h2 span {
-      color: var(--gold);
+      font-size: clamp(2.5rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
     }
 
     .author-copy p {
       color: var(--gray);
-      margin-bottom: 20px;
-      font-size: 1.05rem;
+      margin-bottom: 18px;
+      font-size: 1.04rem;
     }
 
-    .music-feature {
+    /* MUSIC */
+
+    .music-section {
+      background:
+        linear-gradient(
+          180deg,
+          rgba(214, 173, 60, 0.04),
+          transparent
+        );
+    }
+
+    .featured-release {
       display: grid;
-      grid-template-columns: 380px 1fr;
-      gap: 40px;
+      grid-template-columns: 390px 1fr;
       align-items: center;
-      margin-bottom: 40px;
-      background: linear-gradient(145deg, #171717, #0e0e0e);
+      gap: 44px;
+      padding: 32px;
+      margin-bottom: 42px;
+      background:
+        linear-gradient(
+          145deg,
+          #1b1b1b,
+          #0d0d0d
+        );
       border: 1px solid var(--border);
       border-radius: 22px;
-      padding: 30px;
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.38);
     }
 
-    .music-feature img {
-      border-radius: 16px;
+    .featured-release img {
       width: 100%;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1;
       object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border);
     }
 
-    .music-feature h3 {
+    .featured-release h3 {
       color: var(--gold);
-      font-size: clamp(2rem, 5vw, 3.7rem);
-      margin-bottom: 12px;
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 15px;
     }
 
-    .music-feature p {
+    .featured-release p {
       color: var(--gray);
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .music-grid {
@@ -340,59 +507,68 @@
     }
 
     .music-card {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
+      padding: 20px;
     }
 
     .music-card h3 {
-      font-size: 1.2rem;
+      margin-bottom: 13px;
     }
 
     .music-card iframe {
+      display: block;
       width: 100%;
       height: 152px;
       border: none;
       border-radius: 12px;
     }
 
+    /* VIDEO */
+
     .video-grid {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .video-card {
-      padding: 24px;
+    .channel-card {
+      padding: 28px;
     }
 
-    .video-card h3 {
+    .channel-card h3 {
       color: var(--gold);
+      font-size: 1.7rem;
       margin-bottom: 10px;
     }
 
-    .video-card p {
+    .channel-card p {
       color: var(--gray);
-      margin-bottom: 17px;
+      margin-bottom: 20px;
     }
 
-    .video-links {
+    .channel-links {
       display: grid;
       gap: 11px;
     }
 
-    .video-links a {
-      padding: 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
+    .channel-links a {
+      padding: 13px 14px;
       color: var(--gray);
-      font-weight: 700;
-      transition: 0.2s;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      font-weight: 800;
+      transition: 0.22s ease;
     }
 
-    .video-links a:hover {
+    .channel-links a:hover {
       color: #080808;
       background: var(--gold);
       border-color: var(--gold);
+    }
+
+    /* SOCIALS */
+
+    .social-section {
+      background: rgba(255, 255, 255, 0.025);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
 
     .social-grid {
@@ -400,16 +576,18 @@
     }
 
     .social-card {
-      padding: 28px;
+      padding: 27px;
       text-align: center;
     }
 
     .social-card h3 {
       color: var(--gold);
+      font-size: 1.45rem;
       margin-bottom: 10px;
     }
 
     .social-card p {
+      min-height: 75px;
       color: var(--gray);
       margin-bottom: 18px;
     }
@@ -419,42 +597,55 @@
       gap: 10px;
     }
 
+    /* CONTACT */
+
     .contact-box {
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
+      padding: 50px 30px;
       text-align: center;
-      background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+      background:
+        linear-gradient(
+          145deg,
+          #1c1c1c,
+          #0d0d0d
+        );
       border: 1px solid var(--border);
-      border-radius: 22px;
-      padding: 45px 25px;
+      border-radius: 24px;
+      box-shadow: 0 22px 60px rgba(0, 0, 0, 0.4);
     }
 
     .contact-box h2 {
-      font-size: clamp(2rem, 5vw, 3.8rem);
-      margin-bottom: 13px;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 15px;
     }
 
     .contact-box p {
       color: var(--gray);
-      margin-bottom: 22px;
+      margin-bottom: 23px;
     }
 
+    /* FOOTER */
+
     footer {
-      padding: 28px 0;
+      padding: 32px 0;
       text-align: center;
-      color: #999;
+      color: var(--muted);
+      background: #030303;
       border-top: 1px solid var(--border);
-      background: #050505;
     }
 
     footer strong {
       color: var(--gold);
     }
 
-    @media (max-width: 980px) {
+    /* TABLET */
+
+    @media (max-width: 1000px) {
       .hero,
       .author-wrap,
-      .music-feature {
+      .featured-release {
         grid-template-columns: 1fr;
       }
 
@@ -462,7 +653,7 @@
         text-align: center;
       }
 
-      .hero-text {
+      .hero-description {
         margin-left: auto;
         margin-right: auto;
       }
@@ -471,28 +662,92 @@
         justify-content: center;
       }
 
-      .hero-image {
+      .hero-logo-wrap {
         order: -1;
+      }
+
+      .hero-logo {
+        width: min(380px, 80vw);
+      }
+
+      .hero-stats {
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .books-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .author-wrap img {
-        max-width: 420px;
+      .author-photo-wrap {
+        width: min(400px, 90%);
         margin: 0 auto;
       }
     }
 
-    @media (max-width: 720px) {
+    /* MOBILE */
+
+    @media (max-width: 730px) {
+      html {
+        scroll-padding-top: 180px;
+      }
+
       .navbar {
         flex-direction: column;
-        padding: 15px 0;
+        padding: 14px 0 16px;
+      }
+
+      .brand {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .brand img {
+        width: 56px;
+        height: 56px;
+      }
+
+      .brand-text {
+        font-size: 0.93rem;
       }
 
       nav {
         justify-content: center;
+        gap: 13px 18px;
+      }
+
+      nav a {
+        font-size: 0.88rem;
+      }
+
+      .hero-section {
+        min-height: auto;
+      }
+
+      .hero {
+        padding: 55px 0 70px;
+        gap: 35px;
+      }
+
+      h1 {
+        font-size: clamp(2.7rem, 14vw, 4rem);
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-logo {
+        width: min(310px, 82vw);
+        padding: 13px;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 67px 0;
       }
 
       .books-grid,
@@ -502,16 +757,37 @@
         grid-template-columns: 1fr;
       }
 
-      h1 {
-        font-size: 3rem;
+      .card-content p,
+      .social-card p {
+        min-height: auto;
       }
 
-      section {
-        padding: 65px 0;
-      }
-
-      .music-feature {
+      .featured-release {
         padding: 20px;
+      }
+
+      .featured-release img {
+        max-width: 430px;
+        margin: 0 auto;
+      }
+
+      .button-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button-row .btn {
+        width: 100%;
+      }
+
+      .contact-box {
+        padding: 38px 18px;
+      }
+
+      .contact-box .btn {
+        width: 100%;
+        font-size: 0.86rem;
+        overflow-wrap: anywhere;
       }
     }
   </style>
@@ -521,12 +797,20 @@
 
   <header>
     <div class="container navbar">
+
       <a class="brand" href="#home">
-        <img src="logo.png" alt="Black Tongue Publishing logo" />
-        <span>Black Tongue Publishing</span>
+        <img
+          src="logo.png"
+          alt="Black Tongue Publishing logo"
+        >
+
+        <span class="brand-text">
+          Black Tongue Publishing
+        </span>
       </a>
 
       <nav>
+        <a href="#home">Home</a>
         <a href="#books">Books</a>
         <a href="#author">Author</a>
         <a href="#music">Music</a>
@@ -534,29 +818,42 @@
         <a href="#socials">Socials</a>
         <a href="#contact">Contact</a>
       </nav>
+
     </div>
   </header>
 
   <main>
 
-    <section id="home">
+    <!-- HOME -->
+
+    <section id="home" class="hero-section">
       <div class="container hero">
-        <div>
-          <p class="eyebrow">Independent Publishing • Music • Media</p>
+
+        <div class="hero-copy">
+
+          <p class="eyebrow">
+            Books • Music • Culture • Technology
+          </p>
 
           <h1>
-            Stories With
-            <span>Power</span>
+            Welcome to
+            <span class="gold">
+              Black Tongue Publishing
+            </span>
           </h1>
 
-          <p class="hero-text">
-            Welcome to Black Tongue Publishing, the official home of author
-            Terry McCall-El, Lou Da 16 music, Stinky the Brave, independent
-            storytelling, education, creativity and culture.
+          <p class="hero-description">
+            The official home of author Terry McCall-El,
+            Lou Da 16 music, Stinky the Brave, independent
+            publishing, creativity, education and powerful
+            original storytelling.
           </p>
 
           <div class="button-row">
-            <a class="btn btn-primary" href="#books">Explore the Books</a>
+
+            <a class="btn btn-primary" href="#books">
+              Explore the Books
+            </a>
 
             <a
               class="btn btn-outline"
@@ -566,36 +863,82 @@
             >
               Amazon Author Page
             </a>
+
           </div>
+
+          <div class="hero-stats">
+
+            <div class="stat">
+              <strong>4</strong>
+              <span>Featured Books</span>
+            </div>
+
+            <div class="stat">
+              <strong>10</strong>
+              <span>Spotify Songs</span>
+            </div>
+
+            <div class="stat">
+              <strong>2</strong>
+              <span>YouTube Channels</span>
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="hero-image">
-          <img src="logo.png" alt="Black Tongue Publishing emblem" />
+        <div class="hero-logo-wrap">
+          <div class="hero-logo-glow"></div>
+
+          <img
+            class="hero-logo"
+            src="logo.png"
+            alt="Black Tongue Publishing official emblem"
+          >
         </div>
+
       </div>
     </section>
 
+    <!-- BOOKS -->
+
     <section id="books">
       <div class="container">
+
         <div class="section-heading">
-          <p>Black Tongue Publishing</p>
-          <h2>Featured Books</h2>
+          <p class="section-label">
+            Official Publications
+          </p>
+
+          <h2>
+            Featured Books
+          </h2>
+
+          <p>
+            Explore books by Terry McCall-El and
+            Black Tongue Publishing.
+          </p>
         </div>
 
         <div class="grid books-grid">
 
           <article class="book-card">
+
             <img
               class="book-cover"
               src="thelifeofatyrant.png"
               alt="The Life of a Tyrant book cover"
-            />
+            >
 
             <div class="card-content">
-              <h3>The Life of a Tyrant</h3>
+
+              <h3>
+                The Life of a Tyrant
+              </h3>
 
               <p>
-                A gripping journey through power, survival, choices and the
+                A gripping journey through power,
+                survival, difficult choices and the
                 consequences that shape a life.
               </p>
 
@@ -607,22 +950,28 @@
               >
                 Buy on Amazon
               </a>
+
             </div>
           </article>
 
           <article class="book-card">
+
             <img
               class="book-cover"
               src="Stinky_the_brave.png"
               alt="Stinky the Brave book cover"
-            />
+            >
 
             <div class="card-content">
-              <h3>Stinky the Brave</h3>
+
+              <h3>
+                Stinky the Brave
+              </h3>
 
               <p>
-                A heartwarming children's story about courage, love,
-                selflessness and discovering the hero within.
+                A heartwarming children's story about
+                courage, love, selflessness and discovering
+                the hero within.
               </p>
 
               <a
@@ -633,22 +982,28 @@
               >
                 Buy on Amazon
               </a>
+
             </div>
           </article>
 
           <article class="book-card">
+
             <img
               class="book-cover"
               src="The Alchemy.png"
               alt="The Alchemy book cover"
-            />
+            >
 
             <div class="card-content">
-              <h3>The Alchemy</h3>
+
+              <h3>
+                The Alchemy
+              </h3>
 
               <p>
-                Poetry and reflection centered on transforming pain,
-                experience and struggle into personal power.
+                Poetry and reflection centered on turning
+                pain, experience and struggle into personal
+                strength and power.
               </p>
 
               <a
@@ -659,22 +1014,28 @@
               >
                 Buy on Amazon
               </a>
+
             </div>
           </article>
 
           <article class="book-card">
+
             <img
               class="book-cover"
               src="they_were_gods.png"
               alt="They Were Gods Before AI book cover"
-            />
+            >
 
             <div class="card-content">
-              <h3>They Were Gods Before AI</h3>
+
+              <h3>
+                They Were Gods Before AI
+              </h3>
 
               <p>
-                An informative and provocative exploration of artificial
-                intelligence, technology and human creative power.
+                A provocative and informative exploration
+                of artificial intelligence, technology and
+                human creative power.
               </p>
 
               <a
@@ -685,6 +1046,7 @@
               >
                 Buy on Amazon
               </a>
+
             </div>
           </article>
 
@@ -692,30 +1054,53 @@
       </div>
     </section>
 
+    <!-- AUTHOR -->
+
     <section id="author" class="author-section">
       <div class="container author-wrap">
 
-        <img src="terry.png" alt="Author Terry McCall-El" />
+        <div class="author-photo-wrap">
+          <img
+            class="author-photo"
+            src="terry.png"
+            alt="Author Terry McCall-El"
+          >
+        </div>
 
         <div class="author-copy">
-          <p class="eyebrow">Meet the Author</p>
 
-          <h2>Terry <span>McCall-El</span></h2>
+          <p class="eyebrow">
+            Meet the Author
+          </p>
+
+          <h2>
+            Terry
+            <span class="gold">
+              McCall-El
+            </span>
+          </h2>
 
           <p>
-            Terry McCall-El is an independent author, publisher, storyteller,
-            poet and creative entrepreneur. Through Black Tongue Publishing,
-            he creates books and media that blend personal experience,
-            imagination, culture, education and empowerment.
+            Terry McCall-El is an independent author,
+            publisher, poet, songwriter, storyteller and
+            creative entrepreneur.
           </p>
 
           <p>
-            His catalog includes urban literature, poetry, children's books
-            and forward-thinking work exploring artificial intelligence and
-            modern technology.
+            Through Black Tongue Publishing, he develops
+            books and media that combine culture, personal
+            experience, imagination, education, technology
+            and empowerment.
+          </p>
+
+          <p>
+            His catalog includes urban literature, poetry,
+            children's stories and forward-thinking work
+            exploring artificial intelligence.
           </p>
 
           <div class="button-row">
+
             <a
               class="btn btn-primary"
               href="https://www.amazon.com/author/btp"
@@ -729,38 +1114,64 @@
               class="btn btn-outline"
               href="mailto:Blacktonguepublishingllc@gmail.com"
             >
-              Contact the Author
+              Contact Terry
             </a>
+
           </div>
+
         </div>
 
       </div>
     </section>
 
-    <section id="music">
+    <!-- MUSIC -->
+
+    <section id="music" class="music-section">
       <div class="container">
+
         <div class="section-heading">
-          <p>Official Music</p>
-          <h2>Lou Da 16</h2>
+
+          <p class="section-label">
+            Official Music
+          </p>
+
+          <h2>
+            Lou Da 16
+          </h2>
+
+          <p>
+            Stream Lou Da 16 on Spotify and follow the
+            official artist page.
+          </p>
+
         </div>
 
-        <div class="music-feature">
+        <div class="featured-release">
+
           <img
-            src="heroic_villains.png"
+            src="herioc_villians.png"
             alt="Heroic Villains by Lou Da 16"
-          />
+          >
 
           <div>
-            <p class="eyebrow">Featured Release</p>
 
-            <h3>Heroic Villains</h3>
+            <p class="eyebrow">
+              Featured Release
+            </p>
+
+            <h3>
+              Heroic Villains
+            </h3>
 
             <p>
-              Stream music from Lou Da 16, including Heroic Villains,
-              Never Leavin, Status, My Lonely Girl, Soliloquy and more.
+              Stream Heroic Villains and explore music from
+              Lou Da 16, including Never Leavin, Status,
+              My Lonely Girl, Momma We Made It, Soliloquy,
+              Sa'Mya and more.
             </p>
 
             <div class="button-row">
+
               <a
                 class="btn btn-primary"
                 href="https://open.spotify.com/track/4IWE5REkpjyGXA3AnS3tbg"
@@ -778,7 +1189,9 @@
               >
                 Follow Lou Da 16
               </a>
+
             </div>
+
           </div>
         </div>
 
@@ -791,6 +1204,7 @@
               src="https://open.spotify.com/embed/track/7t4oeOG4c5miZSVjeZVdG7"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="Never Leavin Spotify player"
             ></iframe>
           </article>
 
@@ -801,6 +1215,7 @@
               src="https://open.spotify.com/embed/track/3DkRJ1nLmeJ81vTX0iAgNJ"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="Status Spotify player"
             ></iframe>
           </article>
 
@@ -811,6 +1226,7 @@
               src="https://open.spotify.com/embed/track/5JWPs4ES2xipiN12ZerqM3"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="My Lonely Girl Spotify player"
             ></iframe>
           </article>
 
@@ -821,6 +1237,7 @@
               src="https://open.spotify.com/embed/track/3tVaXI6LEovV82pTTm7VRJ"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="Momma We Made It Spotify player"
             ></iframe>
           </article>
 
@@ -831,6 +1248,7 @@
               src="https://open.spotify.com/embed/track/6HkAGEAu3q0x7QPHmq5hNv"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="Soliloquy Spotify player"
             ></iframe>
           </article>
 
@@ -841,6 +1259,7 @@
               src="https://open.spotify.com/embed/track/18hh0ggXMkaQy0obesWNqy"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="Lyrical Armed Robbery Spotify player"
             ></iframe>
           </article>
 
@@ -851,6 +1270,7 @@
               src="https://open.spotify.com/embed/track/4IWE5REkpjyGXA3AnS3tbg"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="Heroic Villains Spotify player"
             ></iframe>
           </article>
 
@@ -861,6 +1281,7 @@
               src="https://open.spotify.com/embed/track/4TTkC5BBgeme3aaLViTjFL"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="Sa'Mya Spotify player"
             ></iframe>
           </article>
 
@@ -871,6 +1292,7 @@
               src="https://open.spotify.com/embed/track/6GwogC41ABJdMyxR37GdN9"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="What They Want Spotify player"
             ></iframe>
           </article>
 
@@ -881,6 +1303,7 @@
               src="https://open.spotify.com/embed/track/217Izjhblmf7j4nY79RueI"
               loading="lazy"
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              title="Lil Bitch Spotify player"
             ></iframe>
           </article>
 
@@ -888,43 +1311,67 @@
       </div>
     </section>
 
+    <!-- VIDEOS -->
+
     <section id="videos">
       <div class="container">
+
         <div class="section-heading">
-          <p>Watch and Subscribe</p>
-          <h2>YouTube Channels</h2>
+
+          <p class="section-label">
+            Watch and Subscribe
+          </p>
+
+          <h2>
+            YouTube Channels
+          </h2>
+
+          <p>
+            Explore official music videos and Stinky the
+            Brave learning content.
+          </p>
+
         </div>
 
         <div class="grid video-grid">
 
-          <article class="video-card">
-            <h3>Lou Da 16</h3>
+          <article class="channel-card">
+
+            <h3>
+              Lou Da 16
+            </h3>
 
             <p>
-              Watch official music videos, performances and additional Lou Da
-              16 releases on YouTube.
+              Watch official music videos, performances and
+              releases that may not be available on Spotify.
             </p>
 
-            <div class="video-links">
+            <div class="channel-links">
+
               <a
                 href="https://youtube.com/@louda1633"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit Lou Da 16 YouTube Channel
+                Visit Lou Da 16 YouTube
               </a>
+
             </div>
           </article>
 
-          <article class="video-card">
-            <h3>Stinky the Brave</h3>
+          <article class="channel-card">
+
+            <h3>
+              Stinky the Brave
+            </h3>
 
             <p>
-              Watch the official Stinky the Brave song and animated learning
-              episodes for children and families.
+              Watch the Stinky the Brave song and animated
+              learning episodes for children and families.
             </p>
 
-            <div class="video-links">
+            <div class="channel-links">
+
               <a
                 href="https://youtube.com/@stinky-the-braves-world"
                 target="_blank"
@@ -964,6 +1411,7 @@
               >
                 Watch Episode 103
               </a>
+
             </div>
           </article>
 
@@ -971,24 +1419,43 @@
       </div>
     </section>
 
-    <section id="socials">
+    <!-- SOCIAL MEDIA -->
+
+    <section id="socials" class="social-section">
       <div class="container">
+
         <div class="section-heading">
-          <p>Stay Connected</p>
-          <h2>Official Social Media</h2>
+
+          <p class="section-label">
+            Stay Connected
+          </p>
+
+          <h2>
+            Official Social Media
+          </h2>
+
+          <p>
+            Follow Black Tongue Publishing and Lou Da 16
+            across social media.
+          </p>
+
         </div>
 
         <div class="grid social-grid">
 
           <article class="social-card">
-            <h3>Black Tongue Publishing</h3>
+
+            <h3>
+              Black Tongue Publishing
+            </h3>
 
             <p>
-              Follow the official publishing brand for books, announcements,
-              releases and new projects.
+              Follow for book releases, announcements,
+              publishing updates and creative projects.
             </p>
 
             <div class="social-links">
+
               <a
                 class="btn btn-outline"
                 href="https://www.instagram.com/blacktonguepublishing_llc"
@@ -1015,18 +1482,23 @@
               >
                 TikTok
               </a>
+
             </div>
           </article>
 
           <article class="social-card">
-            <h3>Lou Da 16</h3>
+
+            <h3>
+              Lou Da 16
+            </h3>
 
             <p>
-              Follow Lou Da 16 for music, videos, promotional content and
-              behind-the-scenes updates.
+              Follow for music, videos, promotional content
+              and behind-the-scenes updates.
             </p>
 
             <div class="social-links">
+
               <a
                 class="btn btn-outline"
                 href="https://www.instagram.com/louda16"
@@ -1053,18 +1525,23 @@
               >
                 TikTok
               </a>
+
             </div>
           </article>
 
           <article class="social-card">
-            <h3>Streaming and Books</h3>
+
+            <h3>
+              Books and Streaming
+            </h3>
 
             <p>
-              Find all official books and music through Amazon, Spotify and
-              YouTube.
+              Find official books, music and videos through
+              Amazon, Spotify and YouTube.
             </p>
 
             <div class="social-links">
+
               <a
                 class="btn btn-outline"
                 href="https://www.amazon.com/author/btp"
@@ -1091,6 +1568,7 @@
               >
                 YouTube
               </a>
+
             </div>
           </article>
 
@@ -1098,16 +1576,28 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
+
     <section id="contact">
       <div class="container">
-        <div class="contact-box">
-          <p class="eyebrow">Business and Media Inquiries</p>
 
-          <h2>Contact Black Tongue Publishing</h2>
+        <div class="contact-box">
+
+          <p class="eyebrow">
+            Business and Media Inquiries
+          </p>
+
+          <h2>
+            Contact
+            <span class="gold">
+              Black Tongue Publishing
+            </span>
+          </h2>
 
           <p>
-            For publishing, media, collaboration, music and business
-            inquiries, contact us directly by email.
+            For publishing, music, media, collaboration and
+            business inquiries, contact Black Tongue
+            Publishing directly.
           </p>
 
           <a
@@ -1116,6 +1606,7 @@
           >
             Blacktonguepublishingllc@gmail.com
           </a>
+
         </div>
       </div>
     </section>
@@ -1124,7 +1615,13 @@
 
   <footer>
     <div class="container">
-      © 2026 <strong>Black Tongue Publishing, LLC</strong>. All rights reserved.
+
+      © 2026
+      <strong>
+        Black Tongue Publishing, LLC
+      </strong>.
+      All rights reserved.
+
     </div>
   </footer>
 
