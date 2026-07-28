@@ -27,6 +27,7 @@
       --gray: #c6c6c6;
       --muted: #969696;
       --border: rgba(214, 173, 60, 0.32);
+      --green: #00d64f;
     }
 
     * {
@@ -77,8 +78,6 @@
     .gold {
       color: var(--gold);
     }
-
-    /* HEADER */
 
     header {
       position: sticky;
@@ -137,8 +136,6 @@
     nav a:hover {
       color: var(--gold);
     }
-
-    /* HERO */
 
     .hero-section {
       position: relative;
@@ -250,6 +247,18 @@
       transform: translateY(-2px);
     }
 
+    .btn-cashapp {
+      color: #031d0c;
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .btn-cashapp:hover {
+      background: #3aff78;
+      border-color: #3aff78;
+      transform: translateY(-2px);
+    }
+
     .hero-logo-wrap {
       position: relative;
       display: flex;
@@ -309,8 +318,6 @@
       font-size: 0.85rem;
     }
 
-    /* GENERAL SECTIONS */
-
     section {
       padding: 90px 0;
     }
@@ -345,8 +352,6 @@
       gap: 27px;
     }
 
-    /* BOOKS */
-
     .books-grid {
       grid-template-columns: repeat(4, 1fr);
     }
@@ -354,7 +359,8 @@
     .book-card,
     .music-card,
     .channel-card,
-    .social-card {
+    .social-card,
+    .youtube-card {
       background:
         linear-gradient(
           145deg,
@@ -371,7 +377,8 @@
     .book-card:hover,
     .music-card:hover,
     .channel-card:hover,
-    .social-card:hover {
+    .social-card:hover,
+    .youtube-card:hover {
       transform: translateY(-7px);
       border-color: var(--gold);
       box-shadow: 0 22px 55px rgba(0, 0, 0, 0.55);
@@ -404,8 +411,6 @@
     .card-content .btn {
       width: 100%;
     }
-
-    /* AUTHOR */
 
     .author-section {
       background: rgba(255, 255, 255, 0.025);
@@ -452,8 +457,6 @@
       margin-bottom: 18px;
       font-size: 1.04rem;
     }
-
-    /* MUSIC */
 
     .music-section {
       background:
@@ -522,48 +525,82 @@
       border-radius: 12px;
     }
 
-    /* VIDEO */
-
-    .video-grid {
-      grid-template-columns: repeat(2, 1fr);
+    .youtube-channel-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 30px;
+      margin-bottom: 45px;
+      background:
+        linear-gradient(
+          145deg,
+          #1b1b1b,
+          #0d0d0d
+        );
+      border: 1px solid var(--border);
+      border-radius: 20px;
     }
 
-    .channel-card {
-      padding: 28px;
-    }
-
-    .channel-card h3 {
+    .youtube-channel-box h3 {
       color: var(--gold);
-      font-size: 1.7rem;
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .youtube-channel-box p {
+      color: var(--gray);
+    }
+
+    .stinky-video-heading {
+      max-width: 760px;
+      margin: 0 auto 35px;
+      text-align: center;
+    }
+
+    .stinky-video-heading h3 {
+      font-size: clamp(2rem, 5vw, 3.3rem);
       margin-bottom: 10px;
     }
 
-    .channel-card p {
+    .stinky-video-heading p {
       color: var(--gray);
       margin-bottom: 20px;
     }
 
-    .channel-links {
+    .youtube-grid {
       display: grid;
-      gap: 11px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
     }
 
-    .channel-links a {
-      padding: 13px 14px;
+    .video-frame {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      background: #000;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .youtube-card-content {
+      padding: 21px;
+    }
+
+    .youtube-card-content h3 {
+      color: var(--gold);
+      margin-bottom: 7px;
+    }
+
+    .youtube-card-content p {
       color: var(--gray);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      font-weight: 800;
-      transition: 0.22s ease;
     }
-
-    .channel-links a:hover {
-      color: #080808;
-      background: var(--gold);
-      border-color: var(--gold);
-    }
-
-    /* SOCIALS */
 
     .social-section {
       background: rgba(255, 255, 255, 0.025);
@@ -597,7 +634,69 @@
       gap: 10px;
     }
 
-    /* CONTACT */
+    .donation-section {
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(0, 214, 79, 0.08),
+          rgba(255, 255, 255, 0.015) 55%,
+          transparent 75%
+        );
+      border-top: 1px solid rgba(0, 214, 79, 0.25);
+      border-bottom: 1px solid rgba(0, 214, 79, 0.25);
+    }
+
+    .donation-box {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 52px 34px;
+      text-align: center;
+      background:
+        linear-gradient(
+          145deg,
+          #171717,
+          #0b0b0b
+        );
+      border: 1px solid rgba(0, 214, 79, 0.42);
+      border-radius: 24px;
+      box-shadow:
+        0 24px 65px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(0, 214, 79, 0.08);
+    }
+
+    .donation-label {
+      color: var(--green);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 12px;
+    }
+
+    .donation-box h2 {
+      font-size: clamp(2.3rem, 5vw, 4.2rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+    }
+
+    .donation-box p {
+      max-width: 720px;
+      margin: 0 auto 22px;
+      color: var(--gray);
+      font-size: 1.05rem;
+    }
+
+    .cashtag {
+      display: inline-block;
+      margin: 5px 0 25px;
+      padding: 10px 18px;
+      color: var(--green);
+      background: rgba(0, 214, 79, 0.08);
+      border: 1px solid rgba(0, 214, 79, 0.38);
+      border-radius: 999px;
+      font-size: 1.22rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+    }
 
     .contact-box {
       max-width: 850px;
@@ -626,8 +725,6 @@
       margin-bottom: 23px;
     }
 
-    /* FOOTER */
-
     footer {
       padding: 32px 0;
       text-align: center;
@@ -639,8 +736,6 @@
     footer strong {
       color: var(--gold);
     }
-
-    /* TABLET */
 
     @media (max-width: 1000px) {
       .hero,
@@ -685,11 +780,9 @@
       }
     }
 
-    /* MOBILE */
-
     @media (max-width: 730px) {
       html {
-        scroll-padding-top: 180px;
+        scroll-padding-top: 185px;
       }
 
       .navbar {
@@ -717,7 +810,7 @@
       }
 
       nav a {
-        font-size: 0.88rem;
+        font-size: 0.86rem;
       }
 
       .hero-section {
@@ -752,7 +845,7 @@
 
       .books-grid,
       .music-grid,
-      .video-grid,
+      .youtube-grid,
       .social-grid {
         grid-template-columns: 1fr;
       }
@@ -780,10 +873,22 @@
         width: 100%;
       }
 
+      .youtube-channel-box {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+      }
+
+      .youtube-channel-box .btn {
+        width: 100%;
+      }
+
+      .donation-box,
       .contact-box {
         padding: 38px 18px;
       }
 
+      .donation-box .btn,
       .contact-box .btn {
         width: 100%;
         font-size: 0.86rem;
@@ -815,6 +920,7 @@
         <a href="#author">Author</a>
         <a href="#music">Music</a>
         <a href="#videos">Videos</a>
+        <a href="#support">Support</a>
         <a href="#socials">Socials</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -823,8 +929,6 @@
   </header>
 
   <main>
-
-    <!-- HOME -->
 
     <section id="home" class="hero-section">
       <div class="container hero">
@@ -864,6 +968,15 @@
               Amazon Author Page
             </a>
 
+            <a
+              class="btn btn-cashapp"
+              href="https://cash.app/$Silentpartner79"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Support Our Projects
+            </a>
+
           </div>
 
           <div class="hero-stats">
@@ -900,8 +1013,6 @@
       </div>
     </section>
 
-    <!-- BOOKS -->
-
     <section id="books">
       <div class="container">
 
@@ -923,7 +1034,6 @@
         <div class="grid books-grid">
 
           <article class="book-card">
-
             <img
               class="book-cover"
               src="thelifeofatyrant.png"
@@ -931,15 +1041,12 @@
             >
 
             <div class="card-content">
-
-              <h3>
-                The Life of a Tyrant
-              </h3>
+              <h3>The Life of a Tyrant</h3>
 
               <p>
-                A gripping journey through power,
-                survival, difficult choices and the
-                consequences that shape a life.
+                A gripping journey through power, survival,
+                difficult choices and the consequences that
+                shape a life.
               </p>
 
               <a
@@ -950,12 +1057,10 @@
               >
                 Buy on Amazon
               </a>
-
             </div>
           </article>
 
           <article class="book-card">
-
             <img
               class="book-cover"
               src="Stinky_the_brave.png"
@@ -963,10 +1068,7 @@
             >
 
             <div class="card-content">
-
-              <h3>
-                Stinky the Brave
-              </h3>
+              <h3>Stinky the Brave</h3>
 
               <p>
                 A heartwarming children's story about
@@ -982,12 +1084,10 @@
               >
                 Buy on Amazon
               </a>
-
             </div>
           </article>
 
           <article class="book-card">
-
             <img
               class="book-cover"
               src="The Alchemy.png"
@@ -995,10 +1095,7 @@
             >
 
             <div class="card-content">
-
-              <h3>
-                The Alchemy
-              </h3>
+              <h3>The Alchemy</h3>
 
               <p>
                 Poetry and reflection centered on turning
@@ -1014,12 +1111,10 @@
               >
                 Buy on Amazon
               </a>
-
             </div>
           </article>
 
           <article class="book-card">
-
             <img
               class="book-cover"
               src="they_were_gods.png"
@@ -1027,10 +1122,7 @@
             >
 
             <div class="card-content">
-
-              <h3>
-                They Were Gods Before AI
-              </h3>
+              <h3>They Were Gods Before AI</h3>
 
               <p>
                 A provocative and informative exploration
@@ -1046,15 +1138,12 @@
               >
                 Buy on Amazon
               </a>
-
             </div>
           </article>
 
         </div>
       </div>
     </section>
-
-    <!-- AUTHOR -->
 
     <section id="author" class="author-section">
       <div class="container author-wrap">
@@ -1124,13 +1213,10 @@
       </div>
     </section>
 
-    <!-- MUSIC -->
-
     <section id="music" class="music-section">
       <div class="container">
 
         <div class="section-heading">
-
           <p class="section-label">
             Official Music
           </p>
@@ -1143,7 +1229,6 @@
             Stream Lou Da 16 on Spotify and follow the
             official artist page.
           </p>
-
         </div>
 
         <div class="featured-release">
@@ -1154,7 +1239,6 @@
           >
 
           <div>
-
             <p class="eyebrow">
               Featured Release
             </p>
@@ -1191,7 +1275,6 @@
               </a>
 
             </div>
-
           </div>
         </div>
 
@@ -1199,7 +1282,6 @@
 
           <article class="music-card">
             <h3>Never Leavin</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/7t4oeOG4c5miZSVjeZVdG7"
               loading="lazy"
@@ -1210,7 +1292,6 @@
 
           <article class="music-card">
             <h3>Status</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/3DkRJ1nLmeJ81vTX0iAgNJ"
               loading="lazy"
@@ -1221,7 +1302,6 @@
 
           <article class="music-card">
             <h3>My Lonely Girl</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/5JWPs4ES2xipiN12ZerqM3"
               loading="lazy"
@@ -1232,7 +1312,6 @@
 
           <article class="music-card">
             <h3>Momma We Made It</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/3tVaXI6LEovV82pTTm7VRJ"
               loading="lazy"
@@ -1243,7 +1322,6 @@
 
           <article class="music-card">
             <h3>Soliloquy</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/6HkAGEAu3q0x7QPHmq5hNv"
               loading="lazy"
@@ -1254,7 +1332,6 @@
 
           <article class="music-card">
             <h3>Lyrical Armed Robbery</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/18hh0ggXMkaQy0obesWNqy"
               loading="lazy"
@@ -1265,7 +1342,6 @@
 
           <article class="music-card">
             <h3>Heroic Villains</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/4IWE5REkpjyGXA3AnS3tbg"
               loading="lazy"
@@ -1276,7 +1352,6 @@
 
           <article class="music-card">
             <h3>Sa'Mya</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/4TTkC5BBgeme3aaLViTjFL"
               loading="lazy"
@@ -1287,7 +1362,6 @@
 
           <article class="music-card">
             <h3>What They Want</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/6GwogC41ABJdMyxR37GdN9"
               loading="lazy"
@@ -1298,7 +1372,6 @@
 
           <article class="music-card">
             <h3>Lil Bitch</h3>
-
             <iframe
               src="https://open.spotify.com/embed/track/217Izjhblmf7j4nY79RueI"
               loading="lazy"
@@ -1311,107 +1384,153 @@
       </div>
     </section>
 
-    <!-- VIDEOS -->
-
     <section id="videos">
       <div class="container">
 
         <div class="section-heading">
-
           <p class="section-label">
             Watch and Subscribe
           </p>
 
           <h2>
-            YouTube Channels
+            Official YouTube
           </h2>
 
           <p>
-            Explore official music videos and Stinky the
-            Brave learning content.
+            Watch Lou Da 16 music content and Stinky the
+            Brave videos directly from the website.
           </p>
+        </div>
+
+        <div class="youtube-channel-box">
+
+          <div>
+            <p class="eyebrow">
+              Lou Da 16 Music
+            </p>
+
+            <h3>
+              Official YouTube Channel
+            </h3>
+
+            <p>
+              Watch Lou Da 16 music videos, performances and
+              releases that may not be available on Spotify.
+            </p>
+          </div>
+
+          <a
+            class="btn btn-primary"
+            href="https://youtube.com/@louda1633"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Lou Da 16 YouTube
+          </a>
 
         </div>
 
-        <div class="grid video-grid">
+        <div class="stinky-video-heading">
 
-          <article class="channel-card">
+          <p class="eyebrow">
+            Stinky the Brave
+          </p>
 
-            <h3>
-              Lou Da 16
-            </h3>
+          <h3>
+            Songs and Learning Episodes
+          </h3>
 
-            <p>
-              Watch official music videos, performances and
-              releases that may not be available on Spotify.
-            </p>
+          <p>
+            Family-friendly videos featuring Stinky the Brave,
+            educational lessons and original children's content.
+          </p>
 
-            <div class="channel-links">
+          <a
+            class="btn btn-outline"
+            href="https://youtube.com/@stinky-the-braves-world"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit Stinky the Brave Channel
+          </a>
 
-              <a
-                href="https://youtube.com/@louda1633"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit Lou Da 16 YouTube
-              </a>
+        </div>
 
+        <div class="youtube-grid">
+
+          <article class="youtube-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/dRJ_nqXIYL8"
+                title="Stinky the Brave Song"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="youtube-card-content">
+              <h3>Stinky the Brave Song</h3>
+              <p>
+                Watch and enjoy the official Stinky the Brave song.
+              </p>
             </div>
           </article>
 
-          <article class="channel-card">
+          <article class="youtube-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/ohFN0g41dA4"
+                title="Stinky the Brave Episode 101"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
 
-            <h3>
-              Stinky the Brave
-            </h3>
+            <div class="youtube-card-content">
+              <h3>Stinky Episode 101</h3>
+              <p>
+                Watch the first Stinky the Brave learning episode.
+              </p>
+            </div>
+          </article>
 
-            <p>
-              Watch the Stinky the Brave song and animated
-              learning episodes for children and families.
-            </p>
+          <article class="youtube-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/jf9bpIy1Tvw"
+                title="Stinky the Brave Episode 102"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
 
-            <div class="channel-links">
+            <div class="youtube-card-content">
+              <h3>Stinky Episode 102</h3>
+              <p>
+                Continue the Stinky the Brave educational adventure.
+              </p>
+            </div>
+          </article>
 
-              <a
-                href="https://youtube.com/@stinky-the-braves-world"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Visit Stinky the Brave Channel
-              </a>
+          <article class="youtube-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube.com/embed/Mc9mq5O_e5M"
+                title="Stinky the Brave Episode 103"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
 
-              <a
-                href="https://youtu.be/dRJ_nqXIYL8"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Watch the Stinky the Brave Song
-              </a>
-
-              <a
-                href="https://youtu.be/ohFN0g41dA4"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Watch Episode 101
-              </a>
-
-              <a
-                href="https://youtu.be/jf9bpIy1Tvw"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Watch Episode 102
-              </a>
-
-              <a
-                href="https://youtu.be/Mc9mq5O_e5M"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Watch Episode 103
-              </a>
-
+            <div class="youtube-card-content">
+              <h3>Stinky Episode 103</h3>
+              <p>
+                Watch another fun learning episode from Stinky's world.
+              </p>
             </div>
           </article>
 
@@ -1419,13 +1538,63 @@
       </div>
     </section>
 
-    <!-- SOCIAL MEDIA -->
+    <section id="support" class="donation-section">
+      <div class="container">
+
+        <div class="donation-box">
+
+          <p class="donation-label">
+            Support Future Projects
+          </p>
+
+          <h2>
+            Help Us
+            <span class="gold">
+              Build the Future
+            </span>
+          </h2>
+
+          <p>
+            Every donation helps support the advancement of future
+            Black Tongue Publishing projects, including new books,
+            children's educational content, music, animation,
+            artificial intelligence development and other independent
+            creative work. Your support helps bring new ideas and
+            original projects to life.
+          </p>
+
+          <div class="cashtag">
+            Cash App: $Silentpartner79
+          </div>
+
+          <div class="button-row">
+            <a
+              class="btn btn-cashapp"
+              href="https://cash.app/$Silentpartner79"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Donate with Cash App
+            </a>
+
+            <a
+              class="btn btn-outline"
+              href="https://cash.app/$Silentpartner79"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Open $Silentpartner79
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
 
     <section id="socials" class="social-section">
       <div class="container">
 
         <div class="section-heading">
-
           <p class="section-label">
             Stay Connected
           </p>
@@ -1438,16 +1607,12 @@
             Follow Black Tongue Publishing and Lou Da 16
             across social media.
           </p>
-
         </div>
 
         <div class="grid social-grid">
 
           <article class="social-card">
-
-            <h3>
-              Black Tongue Publishing
-            </h3>
+            <h3>Black Tongue Publishing</h3>
 
             <p>
               Follow for book releases, announcements,
@@ -1487,10 +1652,7 @@
           </article>
 
           <article class="social-card">
-
-            <h3>
-              Lou Da 16
-            </h3>
+            <h3>Lou Da 16</h3>
 
             <p>
               Follow for music, videos, promotional content
@@ -1530,10 +1692,7 @@
           </article>
 
           <article class="social-card">
-
-            <h3>
-              Books and Streaming
-            </h3>
+            <h3>Books and Streaming</h3>
 
             <p>
               Find official books, music and videos through
@@ -1576,8 +1735,6 @@
       </div>
     </section>
 
-    <!-- CONTACT -->
-
     <section id="contact">
       <div class="container">
 
@@ -1615,13 +1772,11 @@
 
   <footer>
     <div class="container">
-
       © 2026
       <strong>
         Black Tongue Publishing, LLC
       </strong>.
       All rights reserved.
-
     </div>
   </footer>
 
