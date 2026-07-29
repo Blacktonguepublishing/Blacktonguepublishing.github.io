@@ -11,7 +11,6 @@
     content="The official home of Black Tongue Publishing, author Terry McCall-El, Lou Da 16 music and Stinky the Brave."
   >
 
-  <link rel="stylesheet" href="https://sibforms.com/forms/end-form/build/sib-styles.css">
 
   <style>
     :root {
@@ -1143,77 +1142,17 @@
             Black Tongue Publishing projects.
           </p>
 
-          <div class="sib-form">
-            <div id="sib-form-container" class="sib-form-container">
-
-              <div id="error-message" class="sib-form-message-panel" style="font-family:Arial, sans-serif; font-size:16px; text-align:left; color:#661d1d; background-color:#ffeded; border-color:#ff4949; max-width:620px;">
-                <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                  <span class="sib-form-message-panel__inner-text">
-                    Your subscription could not be saved. Please try again.
-                  </span>
-                </div>
-              </div>
-
-              <div id="success-message" class="sib-form-message-panel" style="font-family:Arial, sans-serif; font-size:16px; text-align:left; color:#085229; background-color:#e7faf0; border-color:#13ce66; max-width:620px;">
-                <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                  <span class="sib-form-message-panel__inner-text">
-                    Your subscription has been successful.
-                  </span>
-                </div>
-              </div>
-
-              <div id="sib-container" class="sib-container--large sib-container--vertical">
-                <form
-                  id="sib-form"
-                  method="POST"
-                  action="https://69aef786.sibforms.com/serve/MUIFAEt_8g5UWWveSv1R2EUnpNxRndLGWVEAPBBGVvvYoW5nX0NizQLzPlowaWprGorYd9mT9TuNxRGieRemzvs9x5hthc1EYLxDsU2jBVDvWNVnsmW98H7msRanP15jsyANTAbQQo6susWYnpE9lVikLpjmobj20DGSrYVAkD_X47d5ZTQREWFF_q2JvIUo6e5xaYx1d6qZ7UJRlg=="
-                  data-type="subscription"
-                >
-
-                  <div class="sib-input sib-form-block">
-                    <div class="form__entry entry_block">
-                      <div class="form__label-row">
-                        <label class="entry__label" for="EMAIL" data-required="*">
-                          Enter your email address
-                        </label>
-
-                        <div class="entry__field">
-                          <input
-                            class="input"
-                            type="email"
-                            id="EMAIL"
-                            name="EMAIL"
-                            autocomplete="email"
-                            placeholder="you@example.com"
-                            data-required="true"
-                            required
-                          >
-                        </div>
-                      </div>
-
-                      <label class="entry__error entry__error--primary"></label>
-
-                      <label class="entry__specification">
-                        Your email will be used only for official Black Tongue Publishing updates.
-                      </label>
-                    </div>
-                  </div>
-
-                  <div class="sib-form-block">
-                    <button
-                      class="sib-form-block__button sib-form-block__button-with-loader"
-                      form="sib-form"
-                      type="submit"
-                    >
-                      JOIN THE EMAIL CLUB
-                    </button>
-                  </div>
-
-                  <input type="text" name="email_address_check" value="" class="input--hidden">
-                  <input type="hidden" name="locale" value="en">
-                </form>
-              </div>
-            </div>
+          <div class="newsletter-iframe-wrap">
+            <iframe
+              width="540"
+              height="305"
+              src="https://69aef786.sibforms.com/v2/serve/MUIFAEt_8g5UWWveSv1R2EUnpNxRndLGWVEAPBBGVvvYoW5nX0NizQLzPlowaWprGorYd9mT9TuNxRGieRemzvs9x5hthc1EYLxDsU2jBVDvWNVnsmW98H7msRanP15jsyANTAbQQo6susWYnpE9lVikLpjmobj20DGSrYVAkD_X47d5ZTQREWFF_q2JvIUo6e5xaYx1d6qZ7UJRlg=="
+              frameborder="0"
+              scrolling="auto"
+              allowfullscreen
+              title="Black Tongue Insider Club signup form"
+              style="display:block; width:100%; max-width:540px; margin:0 auto; border:0;"
+            ></iframe>
           </div>
 
         </div>
@@ -1316,37 +1255,5 @@
       © 2026 <strong>Black Tongue Publishing, LLC</strong>. All rights reserved.
     </div>
   </footer>
-
-  <script>
-    window.REQUIRED_CODE_ERROR_MESSAGE = 'Please choose a country code';
-    window.LOCALE = 'en';
-
-    window.EMAIL_INVALID_MESSAGE =
-      window.SMS_INVALID_MESSAGE =
-      "The information provided is invalid. Please review the field format and try again.";
-
-    window.REQUIRED_ERROR_MESSAGE = "This field cannot be left blank.";
-    window.GENERIC_INVALID_MESSAGE =
-      "The information provided is invalid. Please review the field format and try again.";
-
-    window.INVALID_NUMBER =
-      "The information provided is invalid. Please review the field format and try again.";
-
-    window.INVALID_DATE = "Please enter a valid date";
-    window.REQUIRED_MULTISELECT_MESSAGE = 'Please select at least 1 option';
-
-    window.translation = {
-      common: {
-        selectedList: '{quantity} list selected',
-        selectedLists: '{quantity} lists selected',
-        selectedOption: '{quantity} selected',
-        selectedOptions: '{quantity} selected'
-      }
-    };
-
-    var AUTOHIDE = Boolean(0);
-  </script>
-
-  <script defer src="https://sibforms.com/forms/end-form/build/main.js"></script>
 </body>
 </html>
